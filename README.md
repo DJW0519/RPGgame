@@ -1,4 +1,4 @@
-# RPGgame
+﻿# RPGgame
 
 Team: Darren White 
 Kristen Hanslik 
@@ -11,10 +11,11 @@ character of his story, and watch as different events change the attributes of t
 how he impacts the environment around him. 
  
 Functionality: 
-­User can create a new character, with different classes / jobs as options 
-­Depending on the choice made, will impact the attributes of the character 
-­Events in game will morph the character, and by the end will be a mesh of different
+­User can create a new character, with different classes / jobs and gender, as options 
+­Depending on choices made attributes of the character will be impacted
+­Events in game will morph the character, and by the end the charachter will be a mesh of different
  attributes 
+-All players will be existing in the same "world" as one another. For example, if person A cuts down a tree and logs out, then person B will can see that the tree is cut down when they log in. 
 ­Will be scalable, game events can be added later to expand the story 
 ­Interactive story will make the game, events, and character unique to the individual
  user 
