@@ -7,8 +7,29 @@ package goblin.party;
 
 /**
  *
- * @author r_ken
+ * @author
  */
-public class Character {
+public class Weapon extends Item{
+    private String weaponName;
+    private String weaponType;
+    private int weaponPower;
+    private int levelRequirement;
+    private int[] weaponPicture;
     
+    public void setWeaponType(String type){
+        weaponType = type;
+        
+    }
+    
+    public void setWeaponPower(int power){
+        weaponPower = power;
+    }
+    
+    public void setLevelRequirement(int required){
+        levelRequirement = required;
+    }
+    
+    public int checkLevelRequired(){
+        return levelRequirement;    
+    }
 }
