@@ -11,7 +11,7 @@ package goblin.party;
  */
 
 
-public class Player extends Charachter {
+public class Player extends Character {
     private String outfitColor;
     private String hairColor;
     private int[] goblinParty;
@@ -23,7 +23,7 @@ public class Player extends Charachter {
       //TODO
     }
 
-    public bool canAfford(){
+    public boolean canAfford(){
         //TODO
     }
 
@@ -71,7 +71,7 @@ public class Player extends Charachter {
         //TODO
     }
 
-    public void collideWith(Environment){
+    public void collideWith(Environment e){
         //TODO
     }
 
