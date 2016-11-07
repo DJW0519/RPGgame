@@ -7,7 +7,7 @@ package goblin.party;
 
 /**
  *
- * @author r_ken
+ * @author Kristen Hanslik, Robert Kendl, John Murphy, Darren White
  */
 public class GoblinParty {
 
