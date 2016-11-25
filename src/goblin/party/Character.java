@@ -9,27 +9,26 @@ package goblin.party;
  *
  * @author
  */
-public class Weapon extends Item{
-    private String weaponName;
-    private String weaponType;
-    private int weaponPower;
-    private int levelRequirement;
-    private int[] weaponPicture;
-    
-    public void setWeaponType(String type){
-        weaponType = type;
-        
+public abstract class Charachter{
+    private String name;
+    private int healthLevel;
+    private int skillLevel;
+    private Weapon currentWeapon;
+
+
+    public void charachterDie(){
     }
     
-    public void setWeaponPower(int power){
-        weaponPower = power;
+    public void attack(Charachter opponent){
     }
     
-    public void setLevelRequirement(int required){
-        levelRequirement = required;
+    public void setHealthLevel(int newHealthLevel){
+
     }
     
-    public int checkLevelRequired(){
-        return levelRequirement;    
+    public void getHealthLevel(){
+
+
+
     }
 }

@@ -14,8 +14,8 @@ package goblin.party;
 public class Player extends Character {
     private String outfitColor;
     private String hairColor;
-    private int[] goblinParty;
-    private int[] goblinKills;
+    private Goblin[] goblinParty;
+    private int goblinKills;
 
     //Constructor here
 
@@ -23,23 +23,6 @@ public class Player extends Character {
       //TODO
     }
 
-    public boolean canAfford(){
-        //TODO
-    }
-
-
-    //Polymorphism
-    public void pickUpCoin(Coin foundCoin){
-       //TODO
-    }
-
-    public void pickUpWeapon(Weapon foundWeapon){
-        //TODO
-    }
-
-    public void pickUpPotion(Potion foundPotion){
-        //TODO
-    }
 
     public void giveCoinToGoblin(Goblin receivingGoblin){
         //TODO
@@ -50,20 +33,7 @@ public class Player extends Character {
         //TODO
     }
 
-    //polymorphism &&&&&&
-    public void dropWeapon(){
-        //TODO
-    }
-
-    public void dropPotion(){
-        //TODO
-    }
-
     public void takePotion(){
-        //TODO
-    }
-
-    public void goblinKill(){
         //TODO
     }
 
