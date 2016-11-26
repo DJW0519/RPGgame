@@ -1,0 +1,7 @@
+Can run the project via the following:
+
+Make sure all .class files are out of GoblinPartyGame folder
+run javac * inside of GoblinPartyGame folder
+Go back one directory and run java GoblinPartyGame.GoblinParty
+
+Should be good to go
