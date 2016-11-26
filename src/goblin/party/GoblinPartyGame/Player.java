@@ -12,12 +12,25 @@ package GoblinPartyGame;
 
 
 public class Player extends Character {
-    private String outfitColor;
-    private String hairColor;
+	private String outfitColor;
+	private String hairColor;
 //    private Goblin[] goblinParty;
-    private int goblinKills;
+    	private int goblinKills;
+	private Bag playerBag;
 
-    //Constructor here
+	public Player(String outfitColor, String hairColor, String name){
+		super(name);
+		this.outfitColor = outfitColor;
+		this.hairColor = hairColor;
+		this.goblinKills = 0;
+		this.playerBag = new Bag();
+	}
+
+		
+	// Returns 0 if Add was successful, 1 if not
+    	public int pickUpItem(Item newItem){
+		return playerBag.addItem(newItem);
+    	}
 
    // public void addGoblin(Goblin goblinToAdd){
       //TODO
@@ -33,13 +46,13 @@ public class Player extends Character {
         //TODO
    // }
 
-    public void takePotion(){
+    	public void takePotion(){
         //TODO
-    }
+    	}
 
-    public void levelUp(){
-        //TODO
-    }
+    	public void levelUp(){
+        	//TODO
+    	}
 
    // public void collideWith(Environment e){
         //TODO

@@ -15,8 +15,17 @@ public class GoblinParty {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
 	System.out.println("Starting the Goblin Party Game...");
+	
+	//Testing out functions and classes
+	Player testPlayer = new Player("outfitColor", "HColor","Name");
+	GoblinCoin testGoblinCoin = new GoblinCoin(20);
+	if(testPlayer.pickUpItem(testGoblinCoin) == 0){
+		System.out.println("Add was successful");
+	}
+	else{
+		System.out.println("Add was UNsuccessful");
+	}
     }
     
 }

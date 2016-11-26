@@ -39,11 +39,8 @@ public class Bag{
 	}
 
 	public int addItem(Item newItem){
+		System.out.println("In addItem...");
 		return 1;
-
-
-
-
 	}
 
 

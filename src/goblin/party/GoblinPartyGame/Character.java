@@ -10,11 +10,19 @@ package GoblinPartyGame;
  * @author
  */
 public abstract class Character{
-    private String name;
-    private int healthLevel;
-    private int skillLevel;
+	private final int DEFAULT_HEALTH_LEVEL = 100;
+	private final int MIN_SKILL_LEVEL = 1;
+    	private String name;
+    	private int healthLevel;
+    	private int skillLevel;
 //    private Weapon currentWeapon;
 
+    	public Character(String name){
+		this.healthLevel = DEFAULT_HEALTH_LEVEL;
+		this.name = name;
+		this.skillLevel = MIN_SKILL_LEVEL;
+	
+   	}
 
     public void characterDie(){
     }
