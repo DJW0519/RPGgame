@@ -9,20 +9,27 @@ package GoblinPartyGame;
  *
  * @John Murphy
  */
- 
+
 public class Weapon extends Item{
-    private String weaponName;
+
     private String weaponType;
     private int weaponPower;
     private int levelRequirement;
-    private int[] weaponPicture;
+
+    public Weapon(){
+        super(1);
+    }
+    public Weapon(int size, String name, String type, int power, int levelReq){
+      super(size, name);
+      weaponType = type;
+      weaponPower = power;
+      levelRequirement = levelReq;
+    }
+
 
     //setters
     public void setWeaponType(String type){
         weaponType = type;
-    }
-    public void setWeaponName(String name){
-        weaponName = name;
     }
     public void setWeaponPower(int power){
         weaponPower = power;
@@ -38,14 +45,8 @@ public class Weapon extends Item{
     public String getWeaponType(){
         return weaponType;
     }
-    public String getWeaponName(){
-        return weaponName;
-    }
     public int getWeaponPower(){
         return weaponPower;
-    }
-    public int[] getweaponPicture(){
-        return weaponPicture;
     }
 
 }
