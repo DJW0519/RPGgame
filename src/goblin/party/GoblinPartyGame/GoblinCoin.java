@@ -19,7 +19,7 @@ package GoblinPartyGame;
    
    public GoblinCoin(int amount){
        coinAmount = amount;
-       coinType = "Gold";
+       coinType = "Blue";
    }
    
    public GoblinCoin(String type){
