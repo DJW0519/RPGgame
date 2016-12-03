@@ -13,6 +13,7 @@ public abstract class Item {
 	protected int size;
 	protected String name;
 
+	//Constructors
 	public Item(int itemSize){
         	size = itemSize;
     	}
@@ -26,6 +27,7 @@ public abstract class Item {
                 name = itemName;
     	}
 
+	//Getter Methods
 	public int getSize(){
 		return size;
 	}
@@ -34,6 +36,7 @@ public abstract class Item {
                 return name;
         }
         
+	//Setter Methods
         public void changeSize(int itemSize){
                 size = itemSize;
         }
