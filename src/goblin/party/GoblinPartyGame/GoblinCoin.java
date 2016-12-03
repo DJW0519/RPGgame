@@ -12,48 +12,41 @@ package GoblinPartyGame;
 
  public class GoblinCoin extends Item{
 
-   private final String DEFAULT_TYPE = "blue";
+   private final String DEFAULT_TYPE = "Blue";
    private final int DEFAULT_AMOUNT = 1;
+   private int coinAmount;
 
    public GoblinCoin(){
        super(1);
-       coinType = DEFAULT_TYPE;
+       name = DEFAULT_TYPE;
        coinAmount = DEFAULT_AMOUNT;
    }
    public GoblinCoin(int amount, String type){
        super(1);
        coinAmount = amount;
-       coinType = type;
+       name = type;
    }
 
    public GoblinCoin(int amount){
        super(1);
        coinAmount = amount;
-       coinType = "Blue";
+       name = "Blue";
    }
 
    public GoblinCoin(String type){
        super(1);
-       coinType = type;
+       name = type;
        coinAmount = 1;
    }
 
 
-   private String coinType;
-   private int coinAmount;
 
    //setters
-   public void setCoinType(String type){
-     coinType = type;
-   }
    public void setCoinAmount(int amount){
      coinAmount = amount;
    }
 
    //gettters
-   public String getCoinType(){
-     return coinType;
-   }
    public int getCoinAmount(){
      return coinAmount;
    }

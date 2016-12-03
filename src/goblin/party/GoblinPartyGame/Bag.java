@@ -1,5 +1,8 @@
 package GoblinPartyGame;
 
+import java.lang.*;
+import java.util.*;
+
 public class Bag{
 	
 	private final int DEFAULT_CAPACITY = 50;
@@ -9,6 +12,8 @@ public class Bag{
 	public int numBlueCoins;
 	public int numGreenCoins;
 	public int numPurpleCoins;
+	private ArrayList<Item> bagItems;
+	private int numBagItems;
 
     
 	public Bag(){
@@ -17,11 +22,14 @@ public class Bag{
 		numBlueCoins = 0;
 		numGreenCoins = 0;
 		numPurpleCoins = 0;
+		bagItems = new ArrayList<Item>();
 	}
 
-	public void removeItem(Item itemToRemove){
-		//TODO
-
+	public int removeItem(Item itemToRemove){
+		if(bagItems.remove(itemToRemove)){
+			return 0;
+		}
+		return 1;		
 
 	}
 
@@ -39,8 +47,28 @@ public class Bag{
 	}
 
 	public int addItem(Item newItem){
-		System.out.println("In addItem...");
-		return 1;
+		if(roomUsed + newItem.getSize() > capacity) return 1;
+		
+		roomUsed += newItem.getSize();
+
+		if (newItem.getClass().getName() == "GoblinCoin"){
+
+			if(newItem.getItemName() == "Blue"){
+				numBlueCoins += newItem.getSize();
+			}
+			else if(newItem.getItemName() == "Green"){
+				numGreenCoins+= newItem.getSize();
+			}
+			else{
+				numPurpleCoins += newItem.getSize();
+			}
+			
+		}
+		else {
+			bagItems.add(newItem);
+			System.out.println("In addItem...");
+		}
+		return 0;
 	}
 
 

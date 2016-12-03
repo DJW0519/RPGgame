@@ -32,7 +32,7 @@ public abstract class Item {
 		return size;
 	}
 	
-        public String getName(){
+        public String getItemName(){
                 return name;
         }
         
@@ -41,7 +41,7 @@ public abstract class Item {
                 size = itemSize;
         }
         
-        public void changeName(String itemName){
+        public void changeItemName(String itemName){
                 name = itemName;
         }
 }
