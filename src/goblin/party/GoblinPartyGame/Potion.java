@@ -12,9 +12,22 @@ package GoblinPartyGame;
 
 public class Potion extends Item{
 
+  private final int DEFAULT_SIZE = 2;
+  private final String DEFAULT_NAME = "Health Potion";
   private String potionType;
   private int potionValue;
-  private int[] potionPicture;
+
+   public Potion(int value, String type){
+      super(2);
+      name = DEFAULT_NAME;
+      potionType = type;
+      potionValue = value;
+  }
+   public Potion (int value, String type, int itemSize, String itemName){
+       super(itemSize, itemName);
+       potionValue = value;
+       potionType = type;
+   }
 
   //setters
   public void setPotionValue(int val){
