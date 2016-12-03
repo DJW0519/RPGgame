@@ -12,7 +12,6 @@ package GoblinPartyGame;
 
 public class Potion extends Item{
 
-  private final int DEFAULT_SIZE = 2;
   private final String DEFAULT_NAME = "Health Potion";
   private String potionType;
   private int potionValue;
