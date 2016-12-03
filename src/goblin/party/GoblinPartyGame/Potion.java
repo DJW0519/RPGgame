@@ -46,8 +46,5 @@ public class Potion extends Item{
   public String getPotionType(){
     return potionType;
   }
-  public int[] getPotionPicture(){
-    return potionPicture;
-  }
 
 }
