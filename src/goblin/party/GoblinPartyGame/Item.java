@@ -10,10 +10,9 @@ package GoblinPartyGame;
  * @author
  */
 public abstract class Item {
-	private int size;
-	private String name;
-	private int[] image;
-    	
+	protected int size;
+	protected String name;
+
 	public Item(int itemSize){
         	size = itemSize;
     	}

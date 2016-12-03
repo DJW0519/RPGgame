@@ -15,7 +15,6 @@ public class Potion extends Item{
   private String potionType;
   private int potionValue;
   private int[] potionPicture;
-  private int temp;
 
   //setters
   public void setPotionValue(int val){
