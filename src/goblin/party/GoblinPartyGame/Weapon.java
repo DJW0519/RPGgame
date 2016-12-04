@@ -19,9 +19,8 @@ public class Weapon extends Item{
     public Weapon(){
         super(1);
     }
-    public Weapon(int size, String name, String type, int power, int levelReq){
+    public Weapon(int size, String name, int power, int levelReq){
       super(size, name);
-      weaponType = type;
       weaponPower = power;
       levelRequirement = levelReq;
     }
