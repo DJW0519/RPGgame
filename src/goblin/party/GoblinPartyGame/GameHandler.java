@@ -43,8 +43,8 @@ public class GameHandler {
 			return;
 		}
 	}
-	
-    public void goNorth(Player thePlayer)
+    }
+    public void goNorth(Player thePlayer){
 	Scanner keyboard = new Scanner(System.in);
         String answer;
         
@@ -55,7 +55,7 @@ public class GameHandler {
         System.out.println("2: Run!");
         answer = keyboard.nextLine();
         if(answer.equals("1")){
-            Goblin billy = new Goblin("Billy", "Goblin Body Builder", "Green");
+            Goblin billy = new Goblin("Billy", "Goblin Body Builder", "Green", 10);
             int playerHealth = thePlayer.getHealthLevel();
             int billyHealth = billy.getHealthLevel();
             System.out.println("You choose to give the goblin the fight he desires. He squats down and "
@@ -92,7 +92,7 @@ public class GameHandler {
                             if(billyHealth <= 0){
                                 billyHealth = 0;
                                 System.out.println("\n You triumph over the massive goblin with one last blow. He falls over dead.\n");
-                                testPlayer.levelUp();
+                                thePlayer.levelUp();
                             }
                             break;
                             
@@ -132,21 +132,18 @@ public class GameHandler {
             System.out.println("His punch is so strong that it knocks you back...in time.");
         }    
 	}
-    }
-    }
 
-    public void goWest(Player thePlayer){
-
-      Scanner keyboard = new Scanner(System.in);
+    public void goWest(player thePlayer){
+       Scanner keyboard = new Scanner(System.in);
       Random randNum = new Random();
       Weapon axe = new Weapon(15, "Axe", 8, 1);
       Weapon sword = new Weapon(10, "Sword", 5, 1);
-      Weapon mase = new Weapon(12, "Mase", 6, 1);
+      Weapon mace = new Weapon(12, "Mace", 6, 1);
       ArrayList<Item> weapons;
       weapons = new ArrayList<Item>();
       weapons.add(axe);
       weapons.add(sword);
-      weapons.add(mase);
+      weapons.add(mace);
       int currentWeapon;
 	    String answer;
 	    int randomInt = randNum.nextInt(3);
@@ -170,6 +167,5 @@ public class GameHandler {
 			return;
 		}
     	}
-	
-    }
+}	
 }
