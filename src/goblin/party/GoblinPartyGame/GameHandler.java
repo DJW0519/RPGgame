@@ -20,18 +20,23 @@ public class GameHandler {
 
     public void goSouth(Player thePlayer){
 
-        thePlayer.getPlayerBag();
+        GoblinCoin blueCoin = new GoblinCoin(5, "Blue");
+        Goblin friendlyGoblin = new Goblin("Robby", "Good", "Blue", 5);
+        for(int i = 0; i < 8; i++){
+            thePlayer.pickUpItem(blueCoin);
+            thePlayer.addGoblin(friendlyGoblin);
+        }
+        
        Scanner keyboard = new Scanner(System.in);
 	   String answer;
-	   Goblin friendlyGoblin = new Goblin("Robby", "Good", "Blue", 5);
+	   
 	   System.out.println("You encounter a friendly " + friendlyGoblin.getColor() + " Goblin!");
 	   System.out.print("Would you like to hire it for ");
 	   System.out.println(friendlyGoblin.getCharge() + " " + friendlyGoblin.getColor() + " coins? (y/n)");
 	   answer = keyboard.nextLine();
 	   if(answer.equals("y")){
-	       if(thePlayer.payGoblin(friendlyGoblin.getCharge(), friendlyGoblin.getColor()) == 0){
+	       if(thePlayer.payGoblin(friendlyGoblin.getCharge(), friendlyGoblin.getColor()) == 0 ){
               thePlayer.addGoblin(friendlyGoblin);
-		      System.out.println("Success! The Goblin has been added to your party!");
 		  }
 		else{
 			System.out.println("You do not have enough " + friendlyGoblin.getColor() + " coins!");

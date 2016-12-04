@@ -38,14 +38,18 @@ public class Player extends Character {
     	}
 
     public void addGoblin(Goblin goblinToAdd){
-      party.add(goblinToAdd);
-      playerBag.viewBag();
+      if(getPartySize() <= 7){
+         party.add(goblinToAdd);
+         System.out.println("A " + goblinToAdd.name + " has been added to your party");
+       }
+      else System.out.println("Your Goblin party is full!");
+      
     }
 
 
       public int payGoblin(int numCoins, String color){
-		return playerBag.removeCoins(numCoins, color);
-	}
+		    return playerBag.removeCoins(numCoins, color);
+	   }
     
       public void takePotion(Potion potion){
         int currentHealth = getHealthLevel();

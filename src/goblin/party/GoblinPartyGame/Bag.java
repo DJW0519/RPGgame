@@ -113,7 +113,7 @@ public class Bag{
 			bagItems.add(newItem);
 			System.out.println("In addItem...");
 		}
-		viewBag();
+		
 		return 0;
 	}
 	
