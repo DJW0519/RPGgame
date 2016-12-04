@@ -86,7 +86,10 @@ public class Bag{
 		viewBag();
 		return 0;
 	}
-
+	
+	public int getBagCapacity(){
+            return capacity;
+        }
 
 
 
