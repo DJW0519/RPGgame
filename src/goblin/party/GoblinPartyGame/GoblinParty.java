@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package GoblinPartyGame;
+import java.util.Scanner;
 
 /**
  *
@@ -16,7 +17,8 @@ public class GoblinParty {
      */
     public static void main(String[] args) {
       //user input
-      Scanner keyboard = New Scanner(System.in);
+      Scanner keyboard = new Scanner(System.in);
+      String answer;
 
     	System.out.println("Starting the Goblin Party Game...");
 
@@ -24,6 +26,11 @@ public class GoblinParty {
     	Player testPlayer = new Player("outfitColor", "HColor","Name");
     	GoblinCoin testGoblinCoin = new GoblinCoin(20);
       Weapon axe = new Weapon(2, "Axe", 5, 1);
+      System.out.println("Holy cow there is an axe RIGHT next to you. Do you want to pick it up?? y/n");
+      answer = keyboard.nextLine();
+      if(answer.equals("y")) System.out.println("You Got the " + axe.name);
+
+
       if (testPlayer.pickUpItem(axe) == 0) {
         System.out.println("Weapon added");
 
