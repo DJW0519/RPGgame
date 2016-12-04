@@ -25,6 +25,17 @@ public class Bag{
 		bagItems = new ArrayList<Item>();
 	}
 
+	public void veiwBag(){
+		System.out.println("Bag Contents:\n");
+		int i;
+
+		for(i = 0; i < bagItems.size(); i++){
+			System.out.println("%s\n", bagItems.get(i));
+		}
+		System.out.println("Green Coins: %i\n", numGreenCoins);
+		System.out.println("Blue Coins: %i\n", numBlueCoins);
+		System.out.println("Purple Coins: %i\n", numPurpleCoins);
+	}
 	public int removeItem(Item itemToRemove){
 		if(bagItems.remove(itemToRemove)){
 			return 0;
