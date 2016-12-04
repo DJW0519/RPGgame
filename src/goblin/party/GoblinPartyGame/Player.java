@@ -35,11 +35,12 @@ public class Player extends Character {
       //TODO
     //}
 
+	public int payGoblin(int numCoins, String color){
+		return playerBag.removeCoins(numCoins, color);
+    
 
-   // public void giveCoinToGoblin(Goblin receivingGoblin){
-        //TODO
+	}
 
-    //}
 
    // public void switchWeapon(Weapon nextWeapon){
         //TODO

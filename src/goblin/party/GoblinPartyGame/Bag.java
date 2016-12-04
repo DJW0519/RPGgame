@@ -47,6 +47,36 @@ public class Bag{
 		return 1;		
 
 	}
+	public int removeCoins(int numCoins, String color ){
+		switch(color){
+			case "Blue":
+				if(numBlueCoins >= numCoins){
+					numBlueCoins -= numCoins;
+					roomUsed--;
+					return 0;
+				}
+				break;
+			case "Green":
+				if(numGreenCoins >= numCoins){
+					numGreenCoins -= numCoins;
+					roomUsed--;
+					return 0;
+				}
+				break;
+			case "Purple":
+				if(numPurpleCoins >= numCoins){
+					numPurpleCoins -= numCoins;
+					roomUsed --;
+					return 0;
+				}
+				break;
+			default:
+				System.out.println("That color of coin does not exist!");
+				return 1;
+		}
+
+		return 1;
+	}
 
 	public int getRoomUsed(){
 		return roomUsed;

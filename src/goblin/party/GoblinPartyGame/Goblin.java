@@ -12,15 +12,22 @@ package GoblinPartyGame;
 public class Goblin extends Character{
     private String goblinType;
     private String goblinColor;
-    
+    private int goblinCharge;
     //Using name to have extrinsic state for flyweight??
     //Could make goblin names be randomly generated in future.
-    public Goblin(String goblinName, String goblinType, String goblinColor){
+    public Goblin(String goblinName, String goblinType, String goblinColor, int goblinCharge){
 	super(goblinName);
 	this.goblinType = goblinType;
 	this.goblinColor = goblinColor;
+	this.goblinCharge = goblinCharge;
     }
     public void assignGoblin(Player p){
         
+    }
+    public String getColor(){
+	return goblinColor;
+    }
+    public int getCharge(){
+	    return goblinCharge;
     }
 }
