@@ -45,10 +45,12 @@ public class Player extends Character {
    // public void switchWeapon(Weapon nextWeapon){
         //TODO
    // }
-
-    	public void takePotion(){
-        //TODO
-    	}
+      public void takePotion(Potion potion){
+        int currentHealth = this.getHealthLevel();
+        int addedHealth = potion.getPotionValue();
+        this.setHealthLevel(currentHealth + addedHealth);
+        playerBag.removeItem(potion);
+      }
 
     	public void levelUp(){
         	//TODO
