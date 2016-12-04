@@ -30,11 +30,11 @@ public class Bag{
 		int i;
 
 		for(i = 0; i < bagItems.size(); i++){
-			System.out.println("%s\n", bagItems.get(i));
+			System.out.println(bagItems.get(i));
 		}
-		System.out.println("Green Coins: %i\n", numGreenCoins);
-		System.out.println("Blue Coins: %i\n", numBlueCoins);
-		System.out.println("Purple Coins: %i\n", numPurpleCoins);
+		System.out.println("Green Coins: " + numGreenCoins);
+		System.out.println("Blue Coins: " + numBlueCoins);
+		System.out.println("Purple Coins: " + numPurpleCoins);
 	}
 	public int removeItem(Item itemToRemove){
 		if(bagItems.remove(itemToRemove)){
