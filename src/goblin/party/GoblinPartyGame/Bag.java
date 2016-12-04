@@ -84,9 +84,9 @@ public class Bag{
 
 	public int increaseCapacity(int amtToAdd){
 		if(this.capacity + amtToAdd > MAX_CAPACITY){
-			return 1;
+                        this.capacity = MAX_CAPACITY;
+			return 0;
 		}
-		
 		this.capacity = this.capacity + amtToAdd;
 		return 1;
 	}
