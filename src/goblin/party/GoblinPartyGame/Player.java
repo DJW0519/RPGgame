@@ -47,9 +47,9 @@ public class Player extends Character {
 	}
     
       public void takePotion(Potion potion){
-        int currentHealth = this.getHealthLevel();
+        int currentHealth = getHealthLevel();
         int addedHealth = potion.getPotionValue();
-        this.setHealthLevel(currentHealth + addedHealth);
+        setHealthLevel(currentHealth + addedHealth);
         playerBag.removeItem(potion);
       }
 
@@ -61,14 +61,14 @@ public class Player extends Character {
           System.out.println("You leveled up!");
           System.out.println("Level: " + level + " + 1");
           int newLevel = level + 1;
-          this.setSkillLevel(newLevel);
+          setSkillLevel(newLevel);
           System.out.println("Base Health: " + health + " + 5");
           int newHealth = health + 5;
-          this.setBaseHealth(newHealth);
-          this.setHealthLevel(newHealth);
+          setBaseHealth(newHealth);
+          setHealthLevel(newHealth);
           System.out.println("Base Power: " + power + " + 2");
           int newPower = power + 2;
-          this.setBasePower(newPower);
+          setBasePower(newPower);
           System.out.println("Bag Capacity: " + bag + " + 5");
           int newBag = bag + 5;
           int increase = playerBag.increaseCapacity(newBag);
@@ -81,3 +81,4 @@ public class Player extends Character {
           return party.size();
       }
 }
+
