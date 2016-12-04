@@ -25,16 +25,20 @@ public class Bag{
 		bagItems = new ArrayList<Item>();
 	}
 
-	public void veiwBag(){
+	public void viewBag(){
 		System.out.println("Bag Contents:\n");
 		int i;
+		System.out.println("	Green Coins: " + numGreenCoins);
+		System.out.println("	Blue Coins: " + numBlueCoins);
+		System.out.println("	Purple Coins: " + numPurpleCoins + "\n");
+
+		System.out.println("	WEAPONS: ");
 
 		for(i = 0; i < bagItems.size(); i++){
-			System.out.println(bagItems.get(i));
+			System.out.println("	- " + bagItems.get(i).name+ "\n");
 		}
-		System.out.println("Green Coins: " + numGreenCoins);
-		System.out.println("Blue Coins: " + numBlueCoins);
-		System.out.println("Purple Coins: " + numPurpleCoins);
+
+		System.out.println("	POTIONS: \n");
 	}
 	public int removeItem(Item itemToRemove){
 		if(bagItems.remove(itemToRemove)){
@@ -61,8 +65,8 @@ public class Bag{
 		if(roomUsed + newItem.getSize() > capacity) return 1;
 		
 		roomUsed += newItem.getSize();
-
-		if (newItem.getClass().getName() == "GoblinCoin"){
+		System.out.println("Goblin Coin " + newItem.getClass().getName() + "\n");
+		if (newItem.getClass().getName() == "GoblinPartyGame.GoblinCoin"){
 
 			if(newItem.getItemName() == "Blue"){
 				numBlueCoins += newItem.getSize();
@@ -79,6 +83,7 @@ public class Bag{
 			bagItems.add(newItem);
 			System.out.println("In addItem...");
 		}
+		viewBag();
 		return 0;
 	}
 
@@ -90,3 +95,4 @@ public class Bag{
 
 
 }
+
