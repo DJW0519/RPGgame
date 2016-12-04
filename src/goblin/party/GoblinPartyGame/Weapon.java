@@ -12,16 +12,14 @@ package GoblinPartyGame;
 
 public class Weapon extends Item{
     
-    private String weaponType;
     private int weaponPower;
     private int levelRequirement;
 
     public Weapon(){
         super(1);
     }
-    public Weapon(int size, String name, String type, int power, int levelReq){
+    public Weapon(int size, String name, int power, int levelReq){
       super(size, name);
-      weaponType = type;
       weaponPower = power;
       levelRequirement = levelReq;
     }
@@ -33,9 +31,6 @@ public class Weapon extends Item{
 
 
     //setters
-    public void setWeaponType(String type){
-        weaponType = type;
-    }
     public void setWeaponPower(int power){
         weaponPower = power;
     }
@@ -46,9 +41,6 @@ public class Weapon extends Item{
     //gettters
     public int checkLevelRequired(){
         return levelRequirement;
-    }
-    public String getWeaponType(){
-        return weaponType;
     }
     public int getWeaponPower(){
         return weaponPower;
