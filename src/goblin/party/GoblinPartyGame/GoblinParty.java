@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package GoblinPartyGame;
+import java.util.Scanner;
 import java.util.*;
 import java.lang.*;
-
 /**
  *
  * @author Kristen Hanslik, Robert Kendl, John Murphy, Darren White
@@ -32,7 +32,7 @@ public class GoblinParty {
       //instanciate weapons
 	String direction = "c";
 
-	Player player1 = new Player("blue", "red", "Ralphie");
+	Player player1 = new Player("Ralphie");
       //opening prompt
     	System.out.println("You have entered the world of Goblins, you shall now choose where you would like to tavel.");
 	
