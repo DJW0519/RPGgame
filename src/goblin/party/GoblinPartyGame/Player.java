@@ -10,7 +10,6 @@ package GoblinPartyGame;
  * @author kristen
  */
 
-
 public class Player extends Character {
 	private String outfitColor;
 	private String hairColor;
@@ -45,6 +44,7 @@ public class Player extends Character {
    // public void switchWeapon(Weapon nextWeapon){
         //TODO
    // }
+
       public void takePotion(Potion potion){
         int currentHealth = this.getHealthLevel();
         int addedHealth = potion.getPotionValue();
@@ -52,13 +52,7 @@ public class Player extends Character {
         playerBag.removeItem(potion);
       }
 
-    	public void levelUp(){
+      public void levelUp(){
         	//TODO
-    	}
-
-   // public void collideWith(Environment e){
-        //TODO
-   // }
-
-
+      }
 }
