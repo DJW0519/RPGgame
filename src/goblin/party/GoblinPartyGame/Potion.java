@@ -12,14 +12,11 @@ package GoblinPartyGame;
 
 public class Potion extends Item{
 
-  private final String DEFAULT_NAME = "Health Potion";
   private String potionType;
   private int potionValue;
 
    public Potion(int value, String type){
-      super(2);
-      name = DEFAULT_NAME;
-      potionType = type;
+      super(2, type);
       potionValue = value;
   }
    public Potion (int value, String type, int itemSize, String itemName){
@@ -32,16 +29,10 @@ public class Potion extends Item{
   public void setPotionValue(int val){
     potionValue = val;
   }
-  public void setPotionType(String type){
-    potionType = type;
-  }
 
   //gettters
   public int getPotionValue(){
     return potionValue;
-  }
-  public String getPotionType(){
-    return potionType;
   }
 
 }

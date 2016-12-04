@@ -39,6 +39,7 @@ public class Player extends Character {
 
     public void addGoblin(Goblin goblinToAdd){
       party.add(goblinToAdd);
+      playerBag.viewBag();
     }
 
 
@@ -79,6 +80,9 @@ public class Player extends Character {
       public int getPartySize()
       {
           return party.size();
+      }
+      public Bag getPlayerBag(){
+          return playerBag;
       }
 }
 

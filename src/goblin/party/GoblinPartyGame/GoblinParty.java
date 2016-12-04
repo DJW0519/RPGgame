@@ -38,26 +38,26 @@ public class GoblinParty {
 	
 
       while(gameSwitch){
-	switch(direction)	{
-	case "c":       
+	     switch(direction)	{
+	       case "c":       
         	System.out.println("North(n), South(s), East(e), West(w)");
         	direction = keyboard.nextLine();
-		break;	
+		      break;	
         //if West
-	case "w":
-		game.goWest(player1);
-	    	direction = "c";
-          	break;
+	      case "w":
+		      game.goWest(player1);
+	    	  direction = "c";
+          break;
       	case "s":
-		game.goSouth(player1);
-		direction = "c";
-		break;
-	default:
-		System.out.println("Jibberish! You cannot perform that command! Try again.");
-		direction = "c";
-		break;
-	}
-      }
+		      game.goSouth(player1);
+		      direction = "c";
+		      break;
+	     default:
+		      System.out.println("Jibberish! You cannot perform that command! Try again.");
+		      direction = "c";
+		      break;
+	       }
+     }
           //end game
           gameSwitch = false;
     }

@@ -19,22 +19,25 @@ public class GameHandler {
 
 
     public void goSouth(Player thePlayer){
-      Scanner keyboard = new Scanner(System.in);
-	String answer;
-	Goblin friendlyGoblin = new Goblin("Robby", "Good", "Blue", 5);
-	System.out.println("You encounter a friendly " + friendlyGoblin.getColor() + " Goblin!");
-	System.out.print("Would you like to hire it for ");
-	System.out.println(friendlyGoblin.getCharge() + " " + friendlyGoblin.getColor() + " coins? (y/n)");
-	answer = keyboard.nextLine();
-	if(answer.equals("y")){
-		if(thePlayer.payGoblin(friendlyGoblin.getCharge(), friendlyGoblin.getColor()) == 0){
-			System.out.println("Success! The Goblin has been added to your party!");
-		}
+
+        thePlayer.getPlayerBag();
+       Scanner keyboard = new Scanner(System.in);
+	   String answer;
+	   Goblin friendlyGoblin = new Goblin("Robby", "Good", "Blue", 5);
+	   System.out.println("You encounter a friendly " + friendlyGoblin.getColor() + " Goblin!");
+	   System.out.print("Would you like to hire it for ");
+	   System.out.println(friendlyGoblin.getCharge() + " " + friendlyGoblin.getColor() + " coins? (y/n)");
+	   answer = keyboard.nextLine();
+	   if(answer.equals("y")){
+	       if(thePlayer.payGoblin(friendlyGoblin.getCharge(), friendlyGoblin.getColor()) == 0){
+              thePlayer.addGoblin(friendlyGoblin);
+		      System.out.println("Success! The Goblin has been added to your party!");
+		  }
 		else{
 			System.out.println("You do not have enough " + friendlyGoblin.getColor() + " coins!");
-		}
-	}
-	while(true){
+		  }
+	   }
+	   while(true){
 		System.out.println("Looks like there is nothing else to do here.");
 		System.out.println("1: Go back to center");
 		System.out.println("2: Stay here");
@@ -42,7 +45,7 @@ public class GameHandler {
 		if(answer.equals("1")){
 			return;
 		}
-	}
+	   }
     }
     public void goNorth(Player thePlayer){
 	Scanner keyboard = new Scanner(System.in);
