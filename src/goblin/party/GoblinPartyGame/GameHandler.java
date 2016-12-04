@@ -133,7 +133,7 @@ public class GameHandler {
         }    
 	}
 
-    public void goWest(player thePlayer){
+    public void goWest(Player thePlayer){
        Scanner keyboard = new Scanner(System.in);
       Random randNum = new Random();
       Weapon axe = new Weapon(15, "Axe", 8, 1);
