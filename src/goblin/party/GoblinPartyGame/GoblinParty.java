@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package GoblinPartyGame;
-import java.util.Scanner;
+import java.util.*;
+import java.lang.*;
 
 /**
  *
@@ -18,29 +19,52 @@ public class GoblinParty {
     public static void main(String[] args) {
       //user input
       Scanner keyboard = new Scanner(System.in);
+      Random randNum = new Random();
       String answer;
 
-    	System.out.println("Starting the Goblin Party Game...");
+      //loop value
+      boolean gameSwitch = true; //on
 
-    	//Testing out functions and classes
-    	Player testPlayer = new Player("outfitColor", "HColor","Name");
-    	GoblinCoin testGoblinCoin = new GoblinCoin(20);
-      Weapon axe = new Weapon(2, "Axe", 5, 1);
-      System.out.println("Holy cow there is an axe RIGHT next to you. Do you want to pick it up?? y/n");
-      answer = keyboard.nextLine();
-      if(answer.equals("y")) System.out.println("You Got the " + axe.name);
+      //instanciate weapons
+
+      Weapon axe = new Weapon(15, "Axe", 8, 1);
+      Weapon sword = new Weapon(10, "Sword", 5, 1);
+      Weapon mase = new Weapon(12, "Mase", 6, 1);
+      ArrayList<Item> weapons;
+      weapons = new ArrayList<Item>();
+      weapons.add(axe);
+      weapons.add(sword);
+      weapons.add(mase);
+      int currentWeapon;
 
 
-      if (testPlayer.pickUpItem(axe) == 0) {
-        System.out.println("Weapon added");
+      //Create Player
+      Player player1 = new Player("outfitColor", "HColor","Name");
 
-      }
-    	if(testPlayer.pickUpItem(testGoblinCoin) == 0){
-    		System.out.println("Add was successful");
-    	}
-    	else{
-    		System.out.println("Add was UNsuccessful");
-    	}
+      //opening prompt
+    	System.out.println("You have entered the world of Goblins, you shall now choose where you would like to tavel.");
+
+      while(gameSwitch){
+        System.out.println("North(n), South(s), East(e), West(w)");
+        answer = keyboard.nextLine();
+
+        //if West
+        if(answer.equals("w")){
+            int randomInt = randNum.nextInt(3);
+            System.out.println("You look down and see a " + weapons.get(randomInt).name + " just below the surface. Do you grab it?");
+            answer = keyboard.nextLine();
+
+            if(answer.equals("y")){
+              if(player1.pickUpItem(weapons.get(randomInt)) == 0){
+                System.out.println("You are now holding the " + weapons.get(randomInt).name);
+                currentWeapon = randomInt;
+              }
+              else System.out.println("You do not have space for this weapon");
+            }
+          }
+          //end game
+          gameSwitch = false;
+        }
+
     }
-
 }
