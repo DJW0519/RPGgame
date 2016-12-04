@@ -10,19 +10,25 @@ package GoblinPartyGame;
  * @author kristen
  */
 
+import java.util.*;
+
+/**
+ *
+ * @author
+ */
+
+
 public class Player extends Character {
-	private String outfitColor;
-	private String hairColor;
-//    private Goblin[] goblinParty;
+        private ArrayList<Goblin> party;
     	private int goblinKills;
 	private Bag playerBag;
 
-	public Player(String outfitColor, String hairColor, String name){
+	public Player(String name){
 		super(name);
-		this.outfitColor = outfitColor;
-		this.hairColor = hairColor;
 		this.goblinKills = 0;
 		this.playerBag = new Bag();
+                this.setBasePower(5);
+                party = new ArrayList<Goblin>();
 	}
 
 		
@@ -31,21 +37,15 @@ public class Player extends Character {
 		return playerBag.addItem(newItem);
     	}
 
-   // public void addGoblin(Goblin goblinToAdd){
-      //TODO
-    //}
+    public void addGoblin(Goblin goblinToAdd){
+      party.add(goblinToAdd);
+    }
 
-	public int payGoblin(int numCoins, String color){
+
+      public int payGoblin(int numCoins, String color){
 		return playerBag.removeCoins(numCoins, color);
-    
-
 	}
-
-
-   // public void switchWeapon(Weapon nextWeapon){
-        //TODO
-   // }
-
+    
       public void takePotion(Potion potion){
         int currentHealth = this.getHealthLevel();
         int addedHealth = potion.getPotionValue();
@@ -54,6 +54,30 @@ public class Player extends Character {
       }
 
       public void levelUp(){
-        	//TODO
+          int level = this.getSkillLevel();
+          int health = this.getBaseHealth();
+          int power = this.getBasePower();
+          int bag = playerBag.getBagCapacity();
+          System.out.println("You leveled up!");
+          System.out.println("Level: " + level + " + 1");
+          int newLevel = level + 1;
+          this.setSkillLevel(newLevel);
+          System.out.println("Base Health: " + health + " + 5");
+          int newHealth = health + 5;
+          this.setBaseHealth(newHealth);
+          this.setHealthLevel(newHealth);
+          System.out.println("Base Power: " + power + " + 2");
+          int newPower = power + 2;
+          this.setBasePower(newPower);
+          System.out.println("Bag Capacity: " + bag + " + 5");
+          int newBag = bag + 5;
+          int increase = playerBag.increaseCapacity(newBag);
+          if(increase == 0)
+              System.out.println("Bag capacity cannot increase!");
+      }
+      
+      public int getPartySize()
+      {
+          return party.size();
       }
 }
