@@ -34,7 +34,7 @@ public class GoblinParty {
 
 	Player player1 = new Player("Ralphie");
       //opening prompt
-    	System.out.println("You have entered the world of Goblins, you shall now choose where you would like to tavel.");
+    	System.out.println("You have entered the world of Goblins, you shall now choose where you would like to travel.");
 	
 
       while(gameSwitch){
