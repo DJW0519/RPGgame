@@ -173,10 +173,10 @@ public class Player extends Character {
         currentWeapon = new Weapon(0, "Fists", 0);
         skillLevel = 1;
         setBasePower(5);
-        party.ArrayList.clear();
-        Bag.bagItems.ArrayList.clear();
+        party.clear();
+        playerBag = new Bag();
 
-      }
+                }
 
       public int getGoblinSpawn(){
         return goblinSpawn;
@@ -193,5 +193,7 @@ public class Player extends Character {
       public int getGoblinKills(){
         return goblinKills;
         }
+      public void removePartyMember(int i){
+        party.remove(i);
+      }
 }
-
