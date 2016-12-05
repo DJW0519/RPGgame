@@ -64,7 +64,7 @@ public class GameHandler {
     public void goNorth(Player thePlayer){
 	Scanner keyboard = new Scanner(System.in);
         String answer;
-        
+        Bag playerBag = thePlayer.getPlayerBag();
 	System.out.println("You stumble upon a large beefcake of a goblin. "
                 + "Around his neck is a collar with a pendant reading 'Billy'. "
                 + "He looks like he's ready for a fight. What do you do?:");
@@ -80,7 +80,7 @@ public class GameHandler {
             while (playerHealth > 0){
                 System.out.println("\nGoblin's Health: " + billyHealth);
                 System.out.println("Your Health: " + playerHealth);
-                System.out.println("\nWhat do you do?:" + "\n 1: Attack \n 2: Use Potion \n 3: Run");
+                System.out.println("\nWhat do you do?:" + "\n 1: Attack \n 2: Use Potion \n 3: Switch Weapon \n 4: Run");
                 answer = keyboard.nextLine();
                 switch (answer){
                     case "1": 
@@ -114,10 +114,54 @@ public class GameHandler {
                             break;
                             
                     case "2": 
-                            System.out.println("potion");
+                            System.out.println("You look in your bag for potions.");
+                            try {
+                            Thread.sleep(2000);                 
+                            } catch(InterruptedException ex) {
+                            Thread.currentThread().interrupt();
+                            }
+                            ArrayList<Potion> potions = playerBag.getPotion();
+                            for (int i = 0; i < potions.size(); i ++){
+                                System.out.println((i+1) + ": " + potions.get(i).getItemName());
+                            }
+                            System.out.println("Choose what potion you want to drink: ");
+                            answer = keyboard.nextLine();
+                            int result = Integer.parseInt(answer);
+                            if ((result - 1) <= potions.size()){
+                                Potion taken = potions.get(result - 1);
+                                thePlayer.takePotion(taken);
+                                System.out.println("You took the Potion, your health is restored");
+                                try {
+                            Thread.sleep(2000);                 
+                            } catch(InterruptedException ex) {
+                            Thread.currentThread().interrupt();
+                            }
+                                playerHealth = thePlayer.getHealthLevel();
+                            }
+                                
                             break;
-                          
                     case "3":
+                            System.out.println("Your current weapon is\n:"); 
+                            thePlayer.checkWeapon();
+                            try {
+                            Thread.sleep(2000);                 
+                            } catch(InterruptedException ex) {
+                            Thread.currentThread().interrupt();
+                            }
+                            ArrayList<Weapon> weapons = playerBag.getWeapon();
+                            for (int i = 0; i < weapons.size(); i ++){
+                                System.out.println((i+1) + ": " + weapons.get(i).getItemName());
+                            }
+                            System.out.println("Choose a weapon to use: ");
+                            answer = keyboard.nextLine();
+                            int newAnswer = Integer.parseInt(answer);
+                            if((newAnswer - 1) <= weapons.size()){
+                                Weapon switched = weapons.get(newAnswer - 1);
+                                thePlayer.switchWeapon(switched);
+                            }
+                            break;
+                        
+                    case "4":
                             System.out.println("\nYou chicken out. His massive, sculpted body is " +
                             "way too much for you to handle. You go back to where you were before.\n");
                             billyHealth = 0;
