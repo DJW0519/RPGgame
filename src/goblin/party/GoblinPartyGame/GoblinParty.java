@@ -55,6 +55,10 @@ public class GoblinParty {
                	      game.goNorth(player1);
                       direction = "c";
                       break;	     
+	   	case "e":
+		      game.goEast(player1);
+		      direction = "c";
+		      break;
 	     default:
 		      System.out.println("Jibberish! You cannot perform that command! Try again.");
 		      direction = "c";
