@@ -39,7 +39,7 @@ public class GoblinParty {
       while(gameSwitch){
 	     switch(direction)	{
 	       case "c":       
-        	System.out.println("North(n), South(s), East(e), West(w), SouthWest(SW)");
+        	System.out.println("North(n), South(s), East(e), West(w), SouthWest(sw)");
         	direction = keyboard.nextLine();
 		      break;	
         //if West

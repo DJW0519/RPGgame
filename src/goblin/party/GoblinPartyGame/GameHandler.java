@@ -70,33 +70,33 @@ public class GameHandler {
         String answer;
         Bag playerBag = thePlayer.getPlayerBag();
 	System.out.println("You stumble upon a large beefcake of a goblin. "
-                + "Around his neck is a collar with a pendant reading 'Billy'. "
+                + "Around his neck is a collar with a pendant reading 'Darren'. "
                 + "He looks like he's ready for a fight. What do you do?:");
         System.out.println("1: Fight him");
         System.out.println("2: Run!");
         answer = keyboard.nextLine();
         if(answer.equals("1")){
-            Goblin billy = new Goblin("Billy", "Goblin Body Builder", "Green", 10);
+            Goblin darren = new Goblin("Darren", "Goblin Body Builder", "Green", 10);
             int playerHealth = thePlayer.getHealthLevel();
-            int billyHealth = billy.getHealthLevel();
+            int darrenHealth = darren.getHealthLevel();
             System.out.println("You choose to give the goblin the fight he desires. He squats down and "
             + "flexes his massive, veiny biceps. You ready your weapon.");
             while (playerHealth > 0){
-                System.out.println("\nGoblin's Health: " + billyHealth);
+                System.out.println("\nGoblin's Health: " + darrenHealth);
                 System.out.println("Your Health: " + playerHealth);
                 System.out.println("\nWhat do you do?:" + "\n 1: Attack \n 2: Use Potion \n 3: Switch Weapon \n 4: Run");
                 answer = keyboard.nextLine();
                 switch (answer){
                     case "1": 
-                            System.out.println("You attack Billy with your " + thePlayer.getWeaponName());
+                            System.out.println("You attack Darren with your " + thePlayer.getWeaponName());
                             System.out.println("Base Power: " + thePlayer.getBasePower());
                             System.out.println("Weapon Power: " + thePlayer.getWeaponPower());
                             System.out.println("Party Power: " + thePlayer.getPartySize()* 2 + " (2 power per Goblin)");
                             int playerDamageDone = 
                             thePlayer.getBasePower() + thePlayer.getWeaponPower() + (thePlayer.getPartySize()* 2) ; 
                             System.out.println("You do " + playerDamageDone + " damage");
-                            billyHealth -= playerDamageDone;
-                            billy.setHealthLevel(billyHealth);
+                            darrenHealth -= playerDamageDone;
+                            darren.setHealthLevel(darrenHealth);
                             try {
                             Thread.sleep(2000);                 
                             } catch(InterruptedException ex) {
@@ -110,8 +110,8 @@ public class GameHandler {
                             } catch(InterruptedException ex) {
                             Thread.currentThread().interrupt();
                             }
-                            if(billyHealth <= 0){
-                                billyHealth = 0;
+                            if(darrenHealth <= 0){
+                                darrenHealth = 0;
                                 System.out.println("\n You triumph over the massive goblin with one last blow. He falls over dead.\n");
                                 thePlayer.levelUp();
 				thePlayer.increaseGoblinKills();
@@ -132,18 +132,17 @@ public class GameHandler {
                             System.out.println("Choose what potion you want to drink: ");
                             answer = keyboard.nextLine();
                             int result = Integer.parseInt(answer);
-                            if ((result - 1) <= potions.size()){
-                                Potion taken = potions.get(result - 1);
-                                thePlayer.takePotion(taken);
-                                System.out.println("You took the Potion, your health is restored");
-                                try {
-                            Thread.sleep(2000);                 
-                            } catch(InterruptedException ex) {
-                            Thread.currentThread().interrupt();
-                            }
-                                playerHealth = thePlayer.getHealthLevel();
-                            }
-                                
+                                if ((result - 1) <= potions.size()){
+                                    Potion taken = potions.get(result - 1);
+                                    thePlayer.takePotion(taken);
+                                    System.out.println("You took the Potion, your health is restored");
+                                    try {
+                                Thread.sleep(2000);                 
+                                } catch(InterruptedException ex) {
+                                Thread.currentThread().interrupt();
+                                }
+                                    playerHealth = thePlayer.getHealthLevel();
+                                }
                             break;
                     case "3":
                             System.out.println("Your current weapon is\n:"); 
@@ -169,7 +168,7 @@ public class GameHandler {
                     case "4":
                             System.out.println("\nYou chicken out. His massive, sculpted body is " +
                             "way too much for you to handle. You go back to where you were before.\n");
-                            billyHealth = 0;
+                            darrenHealth = 0;
                             break;
                             
                     default: 
@@ -184,7 +183,7 @@ public class GameHandler {
                             + " His rippling muscles have enough force to pierce through your head.\n");
                     System.out.println("YOU ARE DEAD!!! \n");
                 }
-                if(billyHealth == 0)
+                if(darrenHealth == 0)
                     break;
             }
         }
@@ -244,13 +243,20 @@ public class GameHandler {
         int CurrentHealth = thePlayer.getHealthLevel();
         if (CurrentHealth >= 5){
             thePlayer.setHealthLevel(CurrentHealth - 5);
+            System.out.println("You have lost 5 health, your health is now " + thePlayer.getHealthLevel());
         } else {
             thePlayer.characterDeath();
         }
         ArrayList <Weapon> weapons = bag.getWeapon();
-        weapons.clear();
-        thePlayer.removePartyMember(randNum);
-        System.out.println("You lost a friendly goblin and all your weapons, you jabroni. You're bad at this.");
+        if (weapons.size() != 0){
+            weapons.clear();
+        }
+        if (thePlayer.getPartySize() != 0){
+            thePlayer.removePartyMember(0);
+            System.out.println("You lost a friendly goblin and all your weapons, you jabroni. You're bad at this.");
+        } else {
+            System.out.println("You have lost all your weapons, you jabroni. You're bad at this.");
+        }    
         System.out.println("Looks like there is nothing else to do here, luckily for you.");
         System.out.println("1: Go back to center.");
         System.out.println("2: Stay here for some ridiculous reason.");
