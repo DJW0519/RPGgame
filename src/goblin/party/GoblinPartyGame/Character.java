@@ -22,9 +22,6 @@ public abstract class Character{
 		  this.name = name;
    	}
 
-    public void characterDie(){
-    
-    }
     public void attack(Character opponent){
     }
     public void setBaseHealth(int newBaseHealth){

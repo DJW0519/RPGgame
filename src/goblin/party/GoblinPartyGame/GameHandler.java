@@ -114,6 +114,7 @@ public class GameHandler {
                                 billyHealth = 0;
                                 System.out.println("\n You triumph over the massive goblin with one last blow. He falls over dead.\n");
                                 thePlayer.levelUp();
+				thePlayer.increaseGoblinKills();
                             }
                             break;
                             
@@ -234,6 +235,35 @@ public class GameHandler {
     	}
 }	
 
+
+    public void goSouthWest(Player thePlayer){
+        Scanner keyboard = new Scanner(System.in);
+        Random randNum = (math.Random) * (getPartySize);
+        Bag bag = player.getPlayerBag;
+        System.out.println("You fell into a pit, not a very good move, idiot.");
+        int CurrentHealth = thePlayer.getHealthLevel;
+        if (CurrentHealth >= 5){
+            thePlayer.setHealthLevel = (CurrentHealth - 5);
+        } else {
+            thePlayer.characterDeath;
+        }
+        for (int i = 0; i < bag.bagItems.size(); i++)
+        {
+              bag.removeItem(bag.bagItems.get(i));
+        }
+        party.remove(randNum);
+        System.out.println("You lost a friendly goblin and all your weapons, you jabroni. You're bad at this.");
+        System.out.println("Looks like there is nothing else to do here, luckily for you.");
+        System.out.println("1: Go back to center.");
+        System.out.println("2: Stay here for some ridiculous reason.");
+        answer = keyboard.nextLine();
+        if(answer.equals("1")){
+            return;
+
+
+    }
+}
+
 	public void goEast(Player thePlayer){
 		Scanner keyboard = new Scanner(System.in);
 		GoblinCoin gobCoin = new GoblinCoin(5, "Blue");
@@ -256,7 +286,7 @@ public class GameHandler {
 
 		}
 		while(true){
-		System.out.println("Looks like there is nothing else to do her.");
+		System.out.println("Looks like there is nothing else to do here.");
 		System.out.println("1: Go back to center");
 		System.out.println("2: Stay here");
 		answer = keyboard.nextLine();
@@ -266,4 +296,5 @@ public class GameHandler {
 		}
 
 	}
+
 }
