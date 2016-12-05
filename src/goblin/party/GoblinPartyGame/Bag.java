@@ -121,15 +121,15 @@ public class Bag{
 		roomUsed += newItem.getSize();
 		System.out.println("Goblin Coin " + newItem.getClass().getName() + "\n");
 		if (newItem.getClass().getName() == "GoblinPartyGame.GoblinCoin"){
-
-			if(newItem.getItemName() == "Blue"){
-				numBlueCoins += newItem.getSize();
+			GoblinCoin gobCoin = (GoblinCoin)newItem;
+			if(gobCoin.getItemName() == "Blue"){
+				numBlueCoins += gobCoin.getCoinAmount();
 			}
-			else if(newItem.getItemName() == "Green"){
-				numGreenCoins+= newItem.getSize();
+			else if(gobCoin.getItemName() == "Green"){
+				numGreenCoins+= gobCoin.getCoinAmount();
 			}
 			else{
-				numPurpleCoins += newItem.getSize();
+				numPurpleCoins += gobCoin.getCoinAmount();
 			}
 			
 		}
