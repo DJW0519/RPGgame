@@ -19,7 +19,16 @@ public class GameHandler {
 
 
     public void goSouth(Player thePlayer){
-
+        Random randNum = new Random();
+        ArrayList<String> colors;
+        colors = new ArrayList<String>();
+        colors.add("Blue");
+        colors.add("Green");
+        colors.add("Purple");
+        if(thePlayer.getGoblinSpawn() == 1){
+            int randColor = randNum.nextInt(3);
+            int randCharge = randNum.nextInt(5)+1;
+        }
         GoblinCoin blueCoin = new GoblinCoin(5, "Blue");
         Goblin friendlyGoblin = new Goblin("Robby", "Good", "Blue", 5);
         for(int i = 0; i < 8; i++){

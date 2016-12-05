@@ -24,7 +24,6 @@ public class GoblinParty {
       Random randNum = new Random();
       //user input
       String answer;
-	
       GameHandler game = new GameHandler();
       //loop value
       boolean gameSwitch = true; //on
