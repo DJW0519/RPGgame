@@ -54,7 +54,13 @@ public class Player extends Character {
 				return playerBag.numGreenCoins;
 			case "Purple":
 				return playerBag.numPurpleCoins;
+			case "All":
+				return playerBag.numBlueCoins + playerBag.numGreenCoins + playerBag.numPurpleCoins;
+			default:
+				System.out.println("No color of this type");
+				break;
 		}
+		return 0;
 	}
 
 
