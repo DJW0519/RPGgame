@@ -178,6 +178,12 @@ public class Player extends Character {
           System.out.println(i + ": " + party.get(i).name + "-> " + party.get(i).getColor());
         }
       }
-
+      public void increaseGoblinKills(){
+        goblinKills ++;
+        }
+          
+      public int getGoblinKills(){
+        return goblinKills;
+        }
 }
 
