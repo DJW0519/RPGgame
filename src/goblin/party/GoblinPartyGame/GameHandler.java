@@ -236,27 +236,25 @@ public class GameHandler {
 }	
 
 
-    public void goSouthWest(Player thePlayer){
+        public void goSouthWest(Player thePlayer){
         Scanner keyboard = new Scanner(System.in);
-        Random randNum = (math.Random) * (getPartySize);
-        Bag bag = player.getPlayerBag;
+        int randNum = (int) Math.random() * (thePlayer.getPartySize());
+        Bag bag = thePlayer.getPlayerBag();
         System.out.println("You fell into a pit, not a very good move, idiot.");
-        int CurrentHealth = thePlayer.getHealthLevel;
+        int CurrentHealth = thePlayer.getHealthLevel();
         if (CurrentHealth >= 5){
-            thePlayer.setHealthLevel = (CurrentHealth - 5);
+            thePlayer.setHealthLevel(CurrentHealth - 5);
         } else {
-            thePlayer.characterDeath;
+            thePlayer.characterDeath();
         }
-        for (int i = 0; i < bag.bagItems.size(); i++)
-        {
-              bag.removeItem(bag.bagItems.get(i));
-        }
-        party.remove(randNum);
+        ArrayList <Weapon> weapons = bag.getWeapon();
+        weapons.clear();
+        thePlayer.removePartyMember(randNum);
         System.out.println("You lost a friendly goblin and all your weapons, you jabroni. You're bad at this.");
         System.out.println("Looks like there is nothing else to do here, luckily for you.");
         System.out.println("1: Go back to center.");
         System.out.println("2: Stay here for some ridiculous reason.");
-        answer = keyboard.nextLine();
+        String answer = keyboard.nextLine();
         if(answer.equals("1")){
             return;
 
