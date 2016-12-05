@@ -28,12 +28,16 @@ public class GameHandler {
         colors.add("Purple");
         
         int randColor = randNum.nextInt(3);
-        int randCharge = randNum.nextInt(5)+1;
+        int randCharge = randNum.nextInt(5);
         Goblin friendlyGoblin = new Goblin("John", "Good", colors.get(randColor), randCharge);
         
         GoblinCoin blueCoin = new GoblinCoin(5, "Blue");
-        for(int i = 0; i < 8; i++){
+        GoblinCoin greenCoin = new GoblinCoin(5, "Green");
+        GoblinCoin purpleCoin = new GoblinCoin(5, "Purple");
+        for(int i = 0; i < 5; i++){
             thePlayer.pickUpItem(blueCoin);
+            thePlayer.pickUpItem(greenCoin);
+            thePlayer.pickUpItem(purpleCoin);
         }
         
        Scanner keyboard = new Scanner(System.in);

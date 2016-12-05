@@ -66,7 +66,7 @@ public class Player extends Character {
 
     public void addGoblin(Goblin goblinToAdd){
       String answer;
-      if(getPartySize() <= 7){
+      if(getPartySize() <= 2){
          party.add(goblinToAdd);
          System.out.println("A " + goblinToAdd.name + " has been added to your party");
        }
@@ -125,17 +125,13 @@ public class Player extends Character {
       }
       public void editParty(Goblin newGoblin){
         int answer;
-        for(int i = 0; i < party.size(); i++){
-          System.out.println(i + ": " + party.get(i).name + "-> " + party.get(i).getColor());
-        }
-        System.out.println("What goblin would you like to replace your new golblin with?");
+        printParty();
+        System.out.println("Which goblin would you like to replace with this " + newGoblin.getColor() + " goblin?");
         answer = keyboard.nextInt();
         party.remove(answer);
-        party.get(answer).setName("John");
+        newGoblin.setName("Robby");
         party.add(newGoblin);
-        for(int i = 0; i < party.size(); i++){
-          System.out.println(i + ": " + party.get(i).name + "-> " + party.get(i).getColor());
-        }
+        printParty();
       }
       public void checkWeapon(){
         System.out.println("Your current weapon is: " + currentWeapon.getItemName());
@@ -170,5 +166,11 @@ public class Player extends Character {
       public int getGoblinSpawn(){
         return goblinSpawn;
       }
+      public void printParty(){
+        for(int i = 0; i < party.size(); i++){
+          System.out.println(i + ": " + party.get(i).name + "-> " + party.get(i).getColor());
+        }
+      }
+
 }
 
