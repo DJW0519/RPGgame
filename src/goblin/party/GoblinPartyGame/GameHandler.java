@@ -114,6 +114,7 @@ public class GameHandler {
                                 billyHealth = 0;
                                 System.out.println("\n You triumph over the massive goblin with one last blow. He falls over dead.\n");
                                 thePlayer.levelUp();
+				thePlayer.increaseGoblinKills();
                             }
                             break;
                             
