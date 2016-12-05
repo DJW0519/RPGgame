@@ -270,9 +270,30 @@ public class GameHandler {
 
 	public void goEast(Player thePlayer){
 		Scanner keyboard = new Scanner(System.in);
-		GoblinCoin gobCoin = new GoblinCoin(5, "Blue");
+		Random randomNum = new Random();
+		Random randomNum2 = new Random();
+		String color;
+		switch(randomNum.nextInt(20)){
+			case 1:
+				color = "Blue";
+				break;
+			case 2:
+				color = "Green";
+				break;
+			case 3:
+				color = "Purple";
+				break;
+			default:
+				color = "Blue";
+				break;
+
+
+		}
+
+		int numCoins = randomNum2.nextInt(20);
+		GoblinCoin gobCoin = new GoblinCoin(numCoins, color);
 		String answer;
-		System.out.println("You have found a Goblin Coin!");
+		System.out.println("You have found a " + color + " Goblin Coin of value " + numCoins + " !");
 		System.out.println("Do you want to pick it up? (y/n)");
 		answer = keyboard.nextLine();
 		
@@ -284,7 +305,6 @@ public class GameHandler {
 			}
 			else{
 				System.out.println("You do not have enough room in your bag!");
-				System.out.println("Would you like to delete items from your bag to pick it up? (y/n)");
 				
 			}
 
