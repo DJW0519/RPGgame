@@ -256,6 +256,7 @@ public class GameHandler {
 
 
     }
+}
 
 	public void goEast(Player thePlayer){
 		Scanner keyboard = new Scanner(System.in);
