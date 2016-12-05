@@ -233,7 +233,7 @@ public class GameHandler {
 
     public void goSouthWest(Player thePlayer){
         Scanner keyboard = new Scanner(System.in);
-        Random randNum = new Random();
+        Random randNum = (math.Random) * (getPartySize);
         System.out.println("You fell into a pit, not a very good party, idiot.");
         int CurrentHealth = thePlayer.getHealthLevel;
         if (CurrentHealth >= 5){
@@ -241,8 +241,14 @@ public class GameHandler {
         } else {
             thePlayer.setHealthLevel = 0;
         }
-        
-
+        party.remove(randNum);
+        System.out.println("You lost a friendly goblin, you idiot. You're bad at this.");
+        System.out.println("Looks like there is nothing else to do here, luckily for you.");
+        System.out.println("1: Go back to center.");
+        System.out.println("2: Stay here for some ridiculous reason.");
+        answer = keyboard.nextLine();
+        if(answer.equals("1")){
+            return;
 
 
     }

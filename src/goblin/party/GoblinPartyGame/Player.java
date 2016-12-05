@@ -122,7 +122,7 @@ public class Player extends Character {
         for(int i = 0; i < party.size(); i++){
           System.out.println(i + ": " + party.get(i).name + "-> " + party.get(i).getColor());
         }
-        System.out.println("What goblin would you like to replace your new golblin with?");
+        System.out.println("What goblin would you like to replace your new goblin with?");
         answer = keyboard.nextInt();
         party.remove(answer);
         party.get(answer).setName("John");
