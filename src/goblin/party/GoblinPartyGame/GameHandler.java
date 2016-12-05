@@ -280,7 +280,7 @@ public class GameHandler {
 
 		}
 		while(true){
-		System.out.println("Looks like there is nothing else to do her.");
+		System.out.println("Looks like there is nothing else to do here.");
 		System.out.println("1: Go back to center");
 		System.out.println("2: Stay here");
 		answer = keyboard.nextLine();
