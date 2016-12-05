@@ -54,13 +54,19 @@ public class Player extends Character {
 				return playerBag.numGreenCoins;
 			case "Purple":
 				return playerBag.numPurpleCoins;
+			case "All":
+				return playerBag.numBlueCoins + playerBag.numGreenCoins + playerBag.numPurpleCoins;
+			default:
+				System.out.println("No color of this type");
+				break;
 		}
+		return 0;
 	}
 
 
     public void addGoblin(Goblin goblinToAdd){
       String answer;
-      if(getPartySize() <= 7){
+      if(getPartySize() <= 2){
          party.add(goblinToAdd);
          System.out.println("A " + goblinToAdd.name + " has been added to your party");
        }
@@ -119,17 +125,20 @@ public class Player extends Character {
       }
       public void editParty(Goblin newGoblin){
         int answer;
+<<<<<<< HEAD
         for(int i = 0; i < party.size(); i++){
           System.out.println(i + ": " + party.get(i).name + "-> " + party.get(i).getColor());
         }
         System.out.println("What goblin would you like to replace your new goblin with?");
+=======
+        printParty();
+        System.out.println("Which goblin would you like to replace with this " + newGoblin.getColor() + " goblin?");
+>>>>>>> 979175ae99d323c2b48fe926cb93767aefde737e
         answer = keyboard.nextInt();
         party.remove(answer);
-        party.get(answer).setName("John");
+        newGoblin.setName("Robby");
         party.add(newGoblin);
-        for(int i = 0; i < party.size(); i++){
-          System.out.println(i + ": " + party.get(i).name + "-> " + party.get(i).getColor());
-        }
+        printParty();
       }
       public void checkWeapon(){
         System.out.println("Your current weapon is: " + currentWeapon.getItemName());
@@ -164,5 +173,11 @@ public class Player extends Character {
       public int getGoblinSpawn(){
         return goblinSpawn;
       }
+      public void printParty(){
+        for(int i = 0; i < party.size(); i++){
+          System.out.println(i + ": " + party.get(i).name + "-> " + party.get(i).getColor());
+        }
+      }
+
 }
 

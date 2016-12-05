@@ -28,12 +28,16 @@ public class GameHandler {
         colors.add("Purple");
         
         int randColor = randNum.nextInt(3);
-        int randCharge = randNum.nextInt(5)+1;
+        int randCharge = randNum.nextInt(5);
         Goblin friendlyGoblin = new Goblin("John", "Good", colors.get(randColor), randCharge);
         
         GoblinCoin blueCoin = new GoblinCoin(5, "Blue");
-        for(int i = 0; i < 8; i++){
+        GoblinCoin greenCoin = new GoblinCoin(5, "Green");
+        GoblinCoin purpleCoin = new GoblinCoin(5, "Purple");
+        for(int i = 0; i < 5; i++){
             thePlayer.pickUpItem(blueCoin);
+            thePlayer.pickUpItem(greenCoin);
+            thePlayer.pickUpItem(purpleCoin);
         }
         
        Scanner keyboard = new Scanner(System.in);
@@ -252,4 +256,38 @@ public class GameHandler {
 
 
     }
+
+	public void goEast(Player thePlayer){
+		Scanner keyboard = new Scanner(System.in);
+		GoblinCoin gobCoin = new GoblinCoin(5, "Blue");
+		String answer;
+		System.out.println("You have found a Goblin Coin!");
+		System.out.println("Do you want to pick it up? (y/n)");
+		answer = keyboard.nextLine();
+		
+		if(answer.equals("y")){
+			if(thePlayer.pickUpItem(gobCoin) == 0){
+				System.out.print("You now have " + thePlayer.getNumGoblinCoins(gobCoin.getItemName()));
+				System.out.println(" " + gobCoin.getItemName() + " Goblin Coins!");
+
+			}
+			else{
+				System.out.println("You do not have enough room in your bag!");
+				System.out.println("Would you like to delete items from your bag to pick it up? (y/n)");
+				
+			}
+
+		}
+		while(true){
+		System.out.println("Looks like there is nothing else to do her.");
+		System.out.println("1: Go back to center");
+		System.out.println("2: Stay here");
+		answer = keyboard.nextLine();
+		if(answer.equals("1")){
+			return;
+		}
+		}
+
+	}
+
 }
