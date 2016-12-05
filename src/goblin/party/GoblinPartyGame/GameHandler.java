@@ -34,11 +34,6 @@ public class GameHandler {
         GoblinCoin blueCoin = new GoblinCoin(5, "Blue");
         GoblinCoin greenCoin = new GoblinCoin(5, "Green");
         GoblinCoin purpleCoin = new GoblinCoin(5, "Purple");
-        for(int i = 0; i < 5; i++){
-            thePlayer.pickUpItem(blueCoin);
-            thePlayer.pickUpItem(greenCoin);
-            thePlayer.pickUpItem(purpleCoin);
-        }
         
        Scanner keyboard = new Scanner(System.in);
 	   String answer;
