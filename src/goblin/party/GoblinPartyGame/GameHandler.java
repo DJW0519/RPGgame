@@ -229,4 +229,13 @@ public class GameHandler {
 		}
     	}
 }	
+
+
+    public void goSouthWest(Player thePlayer){
+        Scanner keyboard = new Scanner(System.in);
+        Random randNum = new Random();
+        
+
+
+    }
 }
