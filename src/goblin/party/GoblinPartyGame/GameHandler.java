@@ -300,6 +300,11 @@ public class GameHandler {
 			}
 			else{
 				System.out.println("You do not have enough room in your bag!");
+				System.out.println("Would you like to delete something from your bag? (y/n)");
+				answer = keyboard.nextLine();
+				if(answer.equals("y")){
+					thePlayer.viewPlayerBag();
+				}
 				
 			}
 

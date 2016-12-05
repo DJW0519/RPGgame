@@ -196,4 +196,10 @@ public class Player extends Character {
       public void removePartyMember(int i){
         party.remove(i);
       }
+
+      public void viewPlayerBag(){
+	playerBag.viewBag();
+	return;
+
+      }
 }
