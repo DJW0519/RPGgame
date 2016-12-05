@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author kristen
+ * @author kristen, darren
  */
 
 import java.util.*;
@@ -125,15 +125,12 @@ public class Player extends Character {
       }
       public void editParty(Goblin newGoblin){
         int answer;
-<<<<<<< HEAD
         for(int i = 0; i < party.size(); i++){
           System.out.println(i + ": " + party.get(i).name + "-> " + party.get(i).getColor());
         }
         System.out.println("What goblin would you like to replace your new goblin with?");
-=======
         printParty();
         System.out.println("Which goblin would you like to replace with this " + newGoblin.getColor() + " goblin?");
->>>>>>> 979175ae99d323c2b48fe926cb93767aefde737e
         answer = keyboard.nextInt();
         party.remove(answer);
         newGoblin.setName("Robby");
@@ -170,6 +167,17 @@ public class Player extends Character {
       public void switchWeapon(Weapon nextWeapon){
         currentWeapon = nextWeapon;
       } 
+
+      public void characterDeath(){
+        System.out.println("You died.");
+        currentWeapon = new Weapon(0, "Fists", 0);
+        skillLevel = 1;
+        setBasePower(5);
+        party.ArrayList.clear();
+        Bag.bagItems.ArrayList.clear();
+
+      }
+
       public int getGoblinSpawn(){
         return goblinSpawn;
       }
