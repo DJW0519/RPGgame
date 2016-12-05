@@ -229,4 +229,37 @@ public class GameHandler {
 		}
     	}
 }	
+
+	public void goEast(Player thePlayer){
+		Scanner keyboard = new Scanner(System.in);
+		GoblinCoin gobCoin = new GoblinCoin(5, "Blue");
+		String answer;
+		System.out.println("You have found a Goblin Coin!");
+		System.out.println("Do you want to pick it up? (y/n)");
+		answer = keyboard.nextLine();
+		
+		if(answer.equals("y")){
+			if(thePlayer.pickUpItem(gobCoin) == 0){
+				System.out.print("You now have " + thePlayer.getNumGoblinCoins(gobCoin.getItemName()));
+				System.out.println(" " + gobCoin.getItemName() + " Goblin Coins!");
+
+			}
+			else{
+				System.out.println("You do not have enough room in your bag!");
+				System.out.println("Would you like to delete items from your bag to pick it up? (y/n)");
+				
+			}
+
+		}
+		while(true){
+		System.out.println("Looks like there is nothing else to do her.");
+		System.out.println("1: Go back to center");
+		System.out.println("2: Stay here");
+		answer = keyboard.nextLine();
+		if(answer.equals("1")){
+			return;
+		}
+		}
+
+	}
 }
