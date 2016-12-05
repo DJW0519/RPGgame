@@ -46,6 +46,18 @@ public class Player extends Character {
 		return playerBag.addItem(newItem);
     	}
 
+	public int getNumGoblinCoins(String color){
+		switch(color){
+			case "Blue":
+				return playerBag.numBlueCoins;
+			case "Green":
+				return playerBag.numGreenCoins;
+			case "Purple":
+				return playerBag.numPurpleCoins;
+		}
+	}
+
+
     public void addGoblin(Goblin goblinToAdd){
       String answer;
       if(getPartySize() <= 7){
