@@ -234,7 +234,15 @@ public class GameHandler {
     public void goSouthWest(Player thePlayer){
         Scanner keyboard = new Scanner(System.in);
         Random randNum = new Random();
+        System.out.println("You fell into a pit, not a very good party, idiot.");
+        int CurrentHealth = thePlayer.getHealthLevel;
+        if (CurrentHealth >= 5){
+            thePlayer.setHealthLevel = (CurrentHealth - 5);
+        } else {
+            thePlayer.setHealthLevel = 0;
+        }
         
+
 
 
     }
