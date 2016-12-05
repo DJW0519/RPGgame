@@ -33,13 +33,37 @@ public class Bag{
 		System.out.println("	Purple Coins: " + numPurpleCoins + "\n");
 
 		System.out.println("	WEAPONS: ");
-
-		for(i = 0; i < bagItems.size(); i++){
-			System.out.println("	- " + bagItems.get(i).name+ "\n");
+                ArrayList<Weapon> weapons = getWeapon();
+		for(i = 0; i < weapons.size(); i++){
+			System.out.println("	- " + weapons.get(i).name+ "\n");
 		}
 
 		System.out.println("	POTIONS: \n");
+                ArrayList<Potion> potions = getPotion();
+                for(i = 0; i < potions.size(); i++){
+			System.out.println("	- " + potions.get(i).name+ "\n");
+		}
 	}
+        public ArrayList<Potion> getPotion(){
+            ArrayList<Potion> potions = new ArrayList<Potion>();
+            for (int i = 0; i < bagItems.size(); i ++)
+            {
+                if (bagItems.get(i).getClass().getName()== "GoblinPartyGame.Potion"){
+                    potions.add((Potion)bagItems.get(i));
+                }
+            }
+            return potions;
+        }
+        public ArrayList<Weapon> getWeapon(){
+            ArrayList<Weapon> weapons = new ArrayList<Weapon>();
+            for (int i = 0; i < bagItems.size(); i ++)
+            {
+                if (bagItems.get(i).getClass().getName()== "GoblinPartyGame.Weapon"){
+                    weapons.add((Weapon)bagItems.get(i));
+                }
+            }
+            return weapons;
+        }
 	public int removeItem(Item itemToRemove){
 		if(bagItems.remove(itemToRemove)){
 			return 0;
