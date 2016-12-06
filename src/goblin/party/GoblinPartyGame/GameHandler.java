@@ -236,31 +236,31 @@ public class GameHandler {
         Bag bag = thePlayer.getPlayerBag();
         System.out.println("You fell into a pit, not a very good move, idiot.");
         int CurrentHealth = thePlayer.getHealthLevel();
-        if (CurrentHealth >= 5){
+        if (CurrentHealth > 5){
             thePlayer.setHealthLevel(CurrentHealth - 5);
             System.out.println("You have lost 5 health, your health is now " + thePlayer.getHealthLevel());
-        } else {
-            thePlayer.characterDeath();
+            if (thePlayer.getPartySize() != 0){
+                thePlayer.removePartyMember(0);
+                System.out.println("You lost a friendly goblin and all your weapons, you jabroni. You're bad at this.");
+            } else {
+                System.out.println("You have lost all your weapons, you jabroni. You're bad at this.");
         }
         ArrayList <Weapon> weapons = bag.getWeapon();
         if (weapons.size() != 0){
             weapons.clear();
         }
-        if (thePlayer.getPartySize() != 0){
-            thePlayer.removePartyMember(0);
-            System.out.println("You lost a friendly goblin and all your weapons, you jabroni. You're bad at this.");
-        } else {
-            System.out.println("You have lost all your weapons, you jabroni. You're bad at this.");
-        }    
         System.out.println("Looks like there is nothing else to do here, luckily for you.");
         System.out.println("1: Go back to center.");
         System.out.println("2: Stay here for some ridiculous reason.");
         String answer = keyboard.nextLine();
         if(answer.equals("1")){
             return;
-
-
-    }
+    }    
+        } else {
+            thePlayer.characterDeath();
+            return;
+        }
+        
 }
 
 	public void goEast(Player thePlayer){

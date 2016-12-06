@@ -169,12 +169,17 @@ public class Player extends Character {
       } 
 
       public void characterDeath(){
-        System.out.println("You died.");
+        System.out.println("You died, Game Over.");
+        System.out.println("Press 1 to Restart Game.");
+        String answer = keyboard.nextLine();
+        if(answer.equals("1")){
         currentWeapon = new Weapon(0, "Fists", 0);
         skillLevel = 1;
         setBasePower(5);
         party.clear();
         playerBag = new Bag();
+        return;
+      }
 
                 }
 
