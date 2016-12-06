@@ -68,7 +68,7 @@ public class Player extends Character {
       String answer;
       if(getPartySize() <= 2){
          party.add(goblinToAdd);
-         System.out.println("A " + goblinToAdd.name + " has been added to your party");
+         System.out.println("A " + goblinToAdd.getType() + " " + goblinToAdd.getColor + " Goblin has been added to your party");
        }
       else {
         System.out.println("Your Goblin party is full! \n Would you like to edit your party?");
@@ -125,10 +125,6 @@ public class Player extends Character {
       }
       public void editParty(Goblin newGoblin){
         int answer;
-        for(int i = 0; i < party.size(); i++){
-          System.out.println(i + ": " + party.get(i).name + "-> " + party.get(i).getColor());
-        }
-        System.out.println("What goblin would you like to replace your new goblin with?");
         printParty();
         System.out.println("Which goblin would you like to replace with this " + newGoblin.getColor() + " goblin?");
         answer = keyboard.nextInt();

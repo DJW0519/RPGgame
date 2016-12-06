@@ -30,4 +30,7 @@ public class Goblin extends Character{
     public int getCharge(){
 	    return goblinCharge;
     }
+    public String getType(){
+        return goblinType;
+    }
 }
