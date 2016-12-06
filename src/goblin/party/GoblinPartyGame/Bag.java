@@ -117,7 +117,7 @@ public class Bag{
 	}
 
 	public int addItem(Item newItem){
-		if(roomUsed + newItem.getSize() > capacity) return 1;
+		if((roomUsed + newItem.getSize()) > capacity) return 1;
 		
 		roomUsed += newItem.getSize();
 		System.out.println("Goblin Coin " + newItem.getClass().getName() + "\n");
