@@ -68,7 +68,7 @@ public class Player extends Character {
       String answer;
       if(getPartySize() <= 2){
          party.add(goblinToAdd);
-         System.out.println("A " + goblinToAdd.getType() + " " + goblinToAdd.getColor + " Goblin has been added to your party");
+         System.out.println("A " + goblinToAdd.getType() + " " + goblinToAdd.getColor() + " Goblin has been added to your party");
        }
       else {
         System.out.println("Your Goblin party is full! \n Would you like to edit your party?");
