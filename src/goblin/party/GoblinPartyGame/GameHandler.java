@@ -121,6 +121,10 @@ public class GameHandler {
                             Thread.currentThread().interrupt();
                             }
                             ArrayList<Potion> potions = playerBag.getPotion();
+                            if (potions.size() == 0){
+                                System.out.println("\n No potions in your bag");
+                            }
+                            else{
                             for (int i = 0; i < potions.size(); i ++){
                                 System.out.println((i+1) + ": " + potions.get(i).getItemName());
                             }
@@ -138,9 +142,10 @@ public class GameHandler {
                                 }
                                     playerHealth = thePlayer.getHealthLevel();
                                 }
+                            }
                             break;
                     case "3":
-                            System.out.println("Your current weapon is\n:"); 
+                            System.out.println("Your current weapon is: \n"); 
                             thePlayer.checkWeapon();
                             try {
                             Thread.sleep(2000);                 
@@ -148,6 +153,11 @@ public class GameHandler {
                             Thread.currentThread().interrupt();
                             }
                             ArrayList<Weapon> weapons = playerBag.getWeapon();
+                            if (weapons.size() == 0){
+                                System.out.println("\nNo suitable weapon found in your inventory");
+                            }
+                            else {
+                                System.out.println("");
                             for (int i = 0; i < weapons.size(); i ++){
                                 System.out.println((i+1) + ": " + weapons.get(i).getItemName());
                             }
@@ -157,6 +167,7 @@ public class GameHandler {
                             if((newAnswer - 1) <= weapons.size()){
                                 Weapon switched = weapons.get(newAnswer - 1);
                                 thePlayer.switchWeapon(switched);
+                            }
                             }
                             break;
                         
