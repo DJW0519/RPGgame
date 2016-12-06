@@ -235,9 +235,9 @@ public class Player extends Character {
 			break;
 
 		case "c":
-			if(numAnswer.compareTo("1") == 1) payGoblin(1, "Blue");
-			else if(numAnswer.compareTo("2") == 2) payGoblin(1, "Green");
-			else if(numAnswer.compareTo("3") == 3) payGoblin(1, "Purple");
+			if(Integer.parseInt(numAnswer) == 1) payGoblin(1, "Green");
+			else if(Integer.parseInt(numAnswer) == 2) payGoblin(1, "Blue");
+			else if(Integer.parseInt(numAnswer) == 3) payGoblin(1, "Purple");
 			else{
 				System.out.println("Not a valid input!");
 			}
