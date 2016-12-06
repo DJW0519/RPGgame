@@ -281,13 +281,13 @@ public class GameHandler {
 		String color;
 		int numColor = randomNum.nextInt(3);
 		switch(numColor){
-			case 1:
+			case 0:
 				color = "Blue";
 				break;
-			case 2:
+			case 1:
 				color = "Green";
 				break;
-			case 3:
+			case 2:
 				color = "Purple";
 				break;
 			default:
