@@ -28,20 +28,21 @@ public class Bag{
 	public void viewBag(){
 		System.out.println("Bag Contents:\n");
 		int i;
-		System.out.println("	Green Coins: " + numGreenCoins);
-		System.out.println("	Blue Coins: " + numBlueCoins);
-		System.out.println("	Purple Coins: " + numPurpleCoins + "\n");
+		System.out.println("	COINS: (c) ");
+		System.out.println("	1. Green: " + numGreenCoins);
+		System.out.println("	2. Blue: " + numBlueCoins);
+		System.out.println("	3. Purple: " + numPurpleCoins + "\n");
 
-		System.out.println("	WEAPONS: ");
+		System.out.println("	WEAPONS: (w)");
                 ArrayList<Weapon> weapons = getWeapon();
 		for(i = 0; i < weapons.size(); i++){
-			System.out.println("	- " + weapons.get(i).name+ "\n");
+			System.out.println("	" + i + ". " + weapons.get(i).name+ "\n");
 		}
 
-		System.out.println("	POTIONS: \n");
+		System.out.println("	POTIONS: (p)");
                 ArrayList<Potion> potions = getPotion();
                 for(i = 0; i < potions.size(); i++){
-			System.out.println("	- " + potions.get(i).name+ "\n");
+			System.out.println("	 " + i + ". " + potions.get(i).name+ "\n");
 		}
 	}
         public ArrayList<Potion> getPotion(){
@@ -76,21 +77,21 @@ public class Bag{
 			case "Blue":
 				if(numBlueCoins >= numCoins){
 					numBlueCoins -= numCoins;
-					roomUsed--;
+					roomUsed -= numCoins;
 					return 0;
 				}
 				break;
 			case "Green":
 				if(numGreenCoins >= numCoins){
 					numGreenCoins -= numCoins;
-					roomUsed--;
+					roomUsed -= numCoins;
 					return 0;
 				}
 				break;
 			case "Purple":
 				if(numPurpleCoins >= numCoins){
 					numPurpleCoins -= numCoins;
-					roomUsed --;
+					roomUsed -= numCoins;
 					return 0;
 				}
 				break;
@@ -121,21 +122,19 @@ public class Bag{
 		roomUsed += newItem.getSize();
 		System.out.println("Goblin Coin " + newItem.getClass().getName() + "\n");
 		if (newItem.getClass().getName() == "GoblinPartyGame.GoblinCoin"){
-			GoblinCoin gobCoin = (GoblinCoin)newItem;
-			if(gobCoin.getItemName() == "Blue"){
-				numBlueCoins += gobCoin.getCoinAmount();
+			if(newItem.getItemName() == "Blue"){
+				numBlueCoins += newItem.getSize();
 			}
-			else if(gobCoin.getItemName() == "Green"){
-				numGreenCoins+= gobCoin.getCoinAmount();
+			else if(newItem.getItemName() == "Green"){
+				numGreenCoins+= newItem.getSize();
 			}
 			else{
-				numPurpleCoins += gobCoin.getCoinAmount();
+				numPurpleCoins += newItem.getSize();
 			}
 			
 		}
 		else {
 			bagItems.add(newItem);
-			System.out.println("In addItem...");
 		}
 		
 		return 0;
