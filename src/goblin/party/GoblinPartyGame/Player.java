@@ -202,4 +202,49 @@ public class Player extends Character {
 	return;
 
       }
+      public void discardItemFromBag(Item itemToDiscard){
+	playerBag.removeItem(itemToDiscard);
+
+	return;
+      }
+      public void playerInteractiveDiscard(){
+	String typeAnswer;
+	String numAnswer;
+	System.out.println("What type of item would you like to discard?\n");
+	viewPlayerBag();
+	typeAnswer = keyboard.nextLine();
+	System.out.println("What item number of that type would you like to remove?\n");
+	numAnswer = keyboard.nextLine();
+	switch(typeAnswer){
+		case "w":
+			ArrayList<Weapon> weaponList = playerBag.getWeapon();
+
+			if(weaponList.get(Integer.parseInt(numAnswer)) != null){
+				Item toDiscard = weaponList.get(Integer.parseInt(numAnswer));
+				playerBag.removeItem(toDiscard);
+
+			}
+			break;
+		case "p":
+			ArrayList<Potion> potionList = playerBag.getPotion();
+			if(potionList.get(Integer.parseInt(numAnswer)) != null){
+				Item toDiscard = potionList.get(Integer.parseInt(numAnswer));
+				playerBag.removeItem(toDiscard);
+			}
+			break;
+
+		case "c":
+			if(numAnswer.compareTo("1") == 1) payGoblin(1, "Blue");
+			else if(numAnswer.compareTo("2") == 2) payGoblin(1, "Green");
+			else if(numAnswer.compareTo("3") == 3) payGoblin(1, "Purple");
+			else{
+				System.out.println("Not a valid input!");
+			}
+			break;
+		default:
+			System.out.println("Not a valid input!");
+			break;
+	}
+	viewPlayerBag();
+      }
 }
