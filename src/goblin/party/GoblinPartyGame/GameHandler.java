@@ -268,7 +268,8 @@ public class GameHandler {
 		Random randomNum = new Random();
 		Random randomNum2 = new Random();
 		String color;
-		switch(randomNum.nextInt(20)){
+		int numColor = randomNum.nextInt(3);
+		switch(numColor){
 			case 1:
 				color = "Blue";
 				break;
@@ -288,7 +289,7 @@ public class GameHandler {
 		int numCoins = randomNum2.nextInt(20);
 		GoblinCoin gobCoin = new GoblinCoin(numCoins, color);
 		String answer;
-		System.out.println("You have found a " + color + " Goblin Coin of value " + numCoins + " !");
+		System.out.println("You have found a bundle of " + color + " " + numCoins + " Goblin Coins!");
 		System.out.println("Do you want to pick it up? (y/n)");
 		answer = keyboard.nextLine();
 		
@@ -300,10 +301,12 @@ public class GameHandler {
 			}
 			else{
 				System.out.println("You do not have enough room in your bag!");
-				System.out.println("Would you like to delete something from your bag? (y/n)");
+				System.out.println("Would you like to delete something from your bag? (y/n)\n");
 				answer = keyboard.nextLine();
 				if(answer.equals("y")){
-					thePlayer.viewPlayerBag();
+					thePlayer.playerInteractiveDiscard();
+
+
 				}
 				
 			}
