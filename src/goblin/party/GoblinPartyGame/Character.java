@@ -10,7 +10,7 @@ package GoblinPartyGame;
  * @author
  */
 public abstract class Character{
-	private final int DEFAULT_HEALTH_LEVEL = 50;
+	private final int DEFAULT_HEALTH_LEVEL = 35;
     	protected String name;
         private int baseHealth;
     	private int healthLevel;

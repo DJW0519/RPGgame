@@ -28,7 +28,7 @@ public class GameHandler {
         colors.add("Purple");
         
         int randColor = randNum.nextInt(3);
-        int randCharge = randNum.nextInt(5);
+        int randCharge = randNum.nextInt(5)+1;
         Goblin friendlyGoblin = new Goblin("John", "Good", colors.get(randColor), randCharge);
         
         GoblinCoin blueCoin = new GoblinCoin(5, "Blue");
